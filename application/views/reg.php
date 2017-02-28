@@ -7,7 +7,7 @@
     <meta name="keywords" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>登录界面</title>
+    <title>注册页面</title>
 
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
@@ -15,11 +15,11 @@
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="icon" type="image/png" href="{{assets}}i/favicon.png">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+    <link rel="icon" sizes="192x192" href="{{assets}}i/app-icon72x72@2x.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,6 +35,7 @@
     <!--
     <link rel="canonical" href="http://www.example.com/">
     -->
+
     <link rel="stylesheet" href="assets/css/amazeui.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
@@ -42,7 +43,7 @@
 <header>
 
     <div class="log-re">
-        <button type="button" class="am-btn am-btn-default am-radius log-button">注册</button>
+        <button type="button" class="am-btn am-btn-default am-radius log-button">登 录</button>
     </div>
 </header>
 
@@ -58,15 +59,18 @@
                 </div>
                 <br>
                 <div class="am-input-group am-animation-slide-left log-animation-delay">
-                    <input type="text" class="am-form-field am-radius log-input" placeholder="密码" minlength="11" required>
+                    <input type="password" id="log-password" class="am-form-field am-radius log-input" placeholder="密码" minlength="11" required>
                     <span class="am-input-group-label log-icon am-radius"><i class="am-icon-lock am-icon-sm am-icon-fw"></i></span>
                 </div>
                 <br>
-                <button type="submit" class="am-btn am-btn-primary am-btn-block am-btn-lg am-radius am-animation-slide-bottom log-animation-delay">登 录</button>
-                <!--<p class="am-animation-slide-bottom log-animation-delay"><a href="#">忘记密码?</a></p>-->
-                <div class="am-btn-group  am-animation-slide-bottom log-animation-delay-b">
-
+                <div class="am-input-group am-animation-slide-left log-animation-delay-a">
+                    <input type="password" data-equal-to="#log-password" class="am-form-field am-radius log-input" placeholder="确认密码" data-validation-message="请确认密码一致" required>
+                    <span class="am-input-group-label log-icon am-radius"><i class="am-icon-lock am-icon-sm am-icon-fw"></i></span>
                 </div>
+                <br>
+                <button type="submit" class="am-btn am-btn-primary am-btn-block am-btn-lg am-radius am-animation-slide-bottom log-animation-delay-b">注 册</button>
+                <br>
+
             </form>
         </div>
     </div>
