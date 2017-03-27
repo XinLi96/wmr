@@ -16,6 +16,7 @@
         <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
             <h3>博客简介</h3>
             <p class="am-text-sm">本博客使用CI框架MVC模式</p>
+            <p class="am-text-sm"><a href="">管理员登录</a></p>
         </div>
         <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
             <h3>社交账号</h3>

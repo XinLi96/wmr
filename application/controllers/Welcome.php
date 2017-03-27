@@ -20,7 +20,16 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('blog/get_all.php');
+		$this->load->view('index');
 	}
+	public function ly(){
+	    $this->load->view('ly.php');
+    }
+    public function time(){
+        $this->load->view('timeline.php');
+    }
+    public function personal(){
+        $this->load->view('personal.php');
+    }
 
 }

@@ -50,7 +50,12 @@ class User extends CI_Controller {
         unset($_SESSION['user_id']);
         redirect('blog/get_all');
     }
-    
+    public function personal(){
+        $user_id = $this->session->userdata('user_id');
+        $result = $this->t_user_model->get_by_id($user_id);
+        $arr['result'] = $result;
+        $this->load->view('personal.php',$arr);
+    }
 
 }
 

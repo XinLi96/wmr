@@ -5,7 +5,6 @@ class T_blog_model extends CI_Model {
         $this->db->from('blog');
         $this->db->join('user','blog.user_id=user.user_id');
         $this->db->join('cate','blog.cate_id=cate.cate_id');
-        $this->db->order_by('postdate', 'DESC');
         $this->db->limit($limit,$offset);
         $query = $this->db->get();
         return  $query->result();
@@ -32,17 +31,10 @@ class T_blog_model extends CI_Model {
         $query = $this->db->get();
         return  $query->result();
     }
-    public function add_article($addBlogname,$addBlogintro,$addBlogcontent,$addBlogcate,$hideUserId,$time){
-        $array=array(
-            'blog_title'=>$addBlogname,
-            'introduce'=>$addBlogintro,
-            'blog_content'=>$addBlogcontent,
-            'postdate'=>$time,
-            'user_id'=>$hideUserId,
-            'cate_id'=>$addBlogcate
-        );
-        $result=$this->db->insert("blog",$array);
-        return $result;
+    public function get_all(){
+        $sql = "select * from blog,cate,`user` where blog.user_id=user.user_id and blog.cate_id=cate.cate_id ORDER BY postdate DESC";
+        $query = $this->db->query($sql);
+        return  $query->result();
     }
 
 }
