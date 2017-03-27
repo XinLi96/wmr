@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>历史记录</title>
-    <base href="<?php echo site_url();?>">
     <link rel="stylesheet" href="assets/css/amazeui.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
-<?php include('header.php');?>
+
 <body id="blog-article-sidebar">
+
+
 <!-- content srart -->
 <div class="am-g am-g-fixed blog-fixed blog-content">
     <div class="am-u-sm-12">
@@ -171,7 +172,7 @@
 
 </div>
 <!-- content end -->
-<?php include('footer.php');?>
+
 
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script src="assets/js/jquery.min.js"></script>

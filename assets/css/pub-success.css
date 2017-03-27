@@ -1,0 +1,22 @@
+#success-div{
+    height: 200px;
+    width: 100%;
+
+}
+#center{
+    height: 150px;
+    width: 400px;
+
+    margin: 100px auto;
+}
+#center h1{
+    text-align: center;
+}
+#center p{
+    text-align: center;
+
+}
+#center p a{
+    font-size: 1.5em;
+    font-weight: 600;
+}

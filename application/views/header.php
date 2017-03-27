@@ -21,28 +21,25 @@
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body id="blog">
-<header class="am-g am-g-fixed blog-fixed blog-text-center blog-header">
-    <div class="am-u-sm-8 am-u-sm-centered">
-        <h2 class="am-hide-sm-only"><a href="Welcome/login">登录/  注册</a></h2>
-    </div>
-</header>
+
 <hr>
 <nav class="am-g am-g-fixed blog-fixed blog-nav">
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only blog-button" data-am-collapse="{target: '#blog-collapse'}" ><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
 
     <div class="am-collapse am-topbar-collapse" id="blog-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav">
-            <li class="am-active"><a href="">首页</a></li>
+            <li class="am-active"><a href="blog/get_all">首页</a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="">
                     发布文章<span class="am-icon-caret-down"></span>
                 </a>
                 <ul class="am-dropdown-content">
-                    <li><a href="lw-index.html">1.我的文章</a></li>
+                    <li><a href="blog/add_article">1.我的文章</a></li>
                     <li><a href="lw-index-nosidebar.html">2.我的评论</a></li>
                 </ul>
             </li>
-            <li><a href="">留言板</a></li>
+            <li><a href="Welcome/ly">留言板</a></li>
+            <li><a href="Cate/add_cate">添加分类</a></li>
             <li><a href="Welcome/time">时间线</a></li>
             <li><a href="">联系我们</a></li>
             <li><a href="">个人中心</a></li>
