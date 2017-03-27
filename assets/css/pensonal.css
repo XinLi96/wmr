@@ -1,0 +1,94 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul ,li{
+	list-style: none;
+}
+#zhuti{
+	width: 640px;
+	height: 820px;
+	border:1px solid #666;
+	margin: 0 auto;
+}
+.header{
+	width: 640px;
+	height: 40px;
+	line-height: 40px;
+	background: #191919;
+	border-radius: 2px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}
+.con .nav{
+	width: 348px;
+	height: 720px;
+	margin: 0 auto;
+}
+.information li{
+	width: 240px;
+	height: 50px;
+	margin: 25px auto;
+	line-height: 50px;
+}
+#name .left{
+	float: left;
+}
+#name .right{
+	float: right;
+}
+#password{
+	width: 240px;
+	height: 50px;
+	margin: 25px auto;
+	line-height: 50px;
+}
+#password .pswd{
+	line-height: 50px;
+	float: left;
+}
+#password .pass{
+
+	float: right;
+	margin: 0 auto;
+
+}
+#btn{
+	width: 240px;
+	height: 50px;
+	margin: 0 auto;
+	margin-top: -10px;
+
+}
+#btn .change{
+	width: 150px;
+	height: 30px;
+	background: #191919;
+	border:1px solid #191919;
+	border-radius: 5px;
+	/*float: left;*/
+	margin-top: 20px;
+	margin-left: 60px;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+}
+#btn .return{
+	width: 50px;
+	height: 30px;
+	background: #191919;
+	border:1px solid #191919;
+	border-radius: 5px;
+	float: right;
+	margin-right: 20px;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+
+}
+.te{
+	display: block;
+	width: 200px;
+	height: 200px;
+}
