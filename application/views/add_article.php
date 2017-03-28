@@ -29,7 +29,7 @@
 
         <div class="am-form am-g">
             <h3 class="blog-add">发表文章</h3>
-            <form action="blog/do_add_article" method="post">
+            <form action="blog/do_add_article" method="post" enctype="multipart/form-data">
                 <input type="hidden" class="hideUserId"  name="hideUserId" value="<?php if(isset($rs_user)){echo $rs_user->user_id;}?>" >
                 <hr>
                 <fieldset>
@@ -50,7 +50,9 @@
                     <div class="am-form-group">
                         <textarea class="addBlog-content"  name="addBlog-content" rows="20" placeholder="一字千金"></textarea>
                     </div>
-
+                    <div class="am-form-group am-u-sm-4 blog-clear-left">
+                        <span>封面图：</span><input type="file" class="addBlog-name"  name="img">
+                    </div>
 
                 </fieldset>
                 <hr>

@@ -7,6 +7,7 @@ class Blog extends CI_Controller {
         $this->load->model('t_blog_model');
         $this->load->model('t_user_model');
         $this->load->model('t_comment_model');
+        $this->load->model('t_cate_model');
     
     }
     public function get_all(){
@@ -59,6 +60,51 @@ class Blog extends CI_Controller {
         $result = $this->t_blog_model->get_all();
         $arr['result'] = $result;
         $this->load->view('timeline.php',$arr);
+    }
+    public function add_article(){
+        $user_id = $this->session->userdata('user_id');
+        $rs_user=$this->t_user_model->get_mess($user_id);
+        $rs_authorBlog=$this->t_blog_model->get_all_blog_by_id($user_id);
+        $rs_cate=$this->t_cate_model->get_all_cate();
+        $this->load->view('add_article',array(
+            'rs_user'=>$rs_user,
+            'rs_authorBlog'=>$rs_authorBlog,
+            'rs_cate'=>$rs_cate
+
+        ));
+
+    }
+    public function do_add_article(){
+        $addBlogname = $this -> input -> post('addBlog-name');
+        $addBlogintro=$this -> input -> post('addBlog-intro');
+        $addBlogcontent = $this -> input -> post('addBlog-content');
+        $addBlogcate=$this -> input -> post('select');
+        $hideUserId= $this -> input -> post('hideUserId');
+        $time=date('Y-m-d H:i:s',time());
+
+        $config['upload_path']      = './assets/uploads/';
+        $config['allowed_types']    = 'gif|jpg|png';
+        $config['max_size']     = 20000;
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('img'))
+        {
+            $error = array('error' => $this->upload->display_errors());
+            var_dump($error);
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data());
+            $img_name = $data['upload_data']['file_name'];
+        }
+        $con_img = 'assets/uploads/'.$img_name;
+
+        $rs=$this->t_blog_model->add_article($addBlogname,$addBlogintro,$addBlogcontent,$addBlogcate,$hideUserId,$time,$con_img);
+        if($rs){
+            $this->load->view('pub-success');
+        }
+
+
     }
    
 }

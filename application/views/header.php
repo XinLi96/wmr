@@ -34,8 +34,8 @@
                     发布<span class="am-icon-caret-down"></span>
                 </a>
                 <ul class="am-dropdown-content">
-                    <li><a href="lw-index.html">发布文章</a></li>
-                    <li><a href="lw-index-nosidebar.html">添加分类</a></li>
+                    <li><a href="blog/add_article">发布文章</a></li>
+                    <li><a href="Cate/add_cate">添加分类</a></li>
                 </ul>
             </li>
             <li><a href="Welcome/ly">留言板</a></li>

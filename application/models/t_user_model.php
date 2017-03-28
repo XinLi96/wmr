@@ -39,4 +39,11 @@ class T_user_model extends CI_Model {
         $query = $this->db->get();
         return  $query->row();
     }
+    public function get_mess($user_id){
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('user_id',$user_id);
+        $query = $this->db->get();
+        return  $query->row();
+    }
 }

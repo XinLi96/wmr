@@ -15,6 +15,7 @@ $(function () {
             console.log(data);
             if(data){
                 var html='';
+
                 html+=
             '<div class="am-g blog-author blog-article-margin">'+
                     '<div class="am-u-sm-7 am-u-md-9 am-u-lg-10 comment-div">'+
