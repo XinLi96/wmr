@@ -56,6 +56,22 @@ class User extends CI_Controller {
         $arr['result'] = $result;
         $this->load->view('personal.php',$arr);
     }
+    public function update_info(){
+        $user_id = $this->session->userdata('user_id');
+        $name = $this->input->post('name');
+        $pass = $this->input->post('pass');
+        $sex = $this->input->post('sex');
+        $pro = $this->input->post('pro');
+        $city = $this->input->post('city');
+        $js = $this->input->post('js');
+
+        $result = $this->t_user_model->update_info($user_id,$pass,$name,$sex,$pro,$city,$js);
+        if($result){
+            redirect(blog/get_all);
+        }else{
+            echo '更新失败';
+        }
+    }
 
 }
 

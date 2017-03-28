@@ -46,4 +46,22 @@ class T_user_model extends CI_Model {
         $query = $this->db->get();
         return  $query->row();
     }
+    public function update_info($user_id,$pass,$name,$sex,$pro,$city,$js){
+        $sql = 'update user set username='.$name.' pass='.$pass.' sex='.$sex.' province='.$pro.' city='.$city.' user_introduction='.$js.' where user_id='.$user_id.'';
+        $query = $this->db->query($sql);
+        return  $query;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

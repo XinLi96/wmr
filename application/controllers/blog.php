@@ -43,7 +43,7 @@ class Blog extends CI_Controller {
         $rs= $this->t_blog_model->get_all_blog($config['per_page'],$offset);
         $rs_name=$this->t_user_model->get_userName($user_id);
         $this->load->view('index',array('rs'=>$rs,
-            'user_name'=>$rs_name ));
+            'user_name'=>$rs_name,'flag'=>0 ));
         
     }
     public function get_blog(){
@@ -103,8 +103,20 @@ class Blog extends CI_Controller {
         if($rs){
             $this->load->view('pub-success');
         }
-
-
+    }
+    public function search(){
+        $user_id = $this->session->userdata('user_id');
+        $rs_name=$this->t_user_model->get_userName($user_id);
+        $key = $this->input->post('key');
+        $result = $this->t_blog_model->search($key);
+        if($result){
+            $arr['rs'] = $result;
+            $arr['user_name'] = $rs_name;
+            $arr['flag'] = 1;
+            $this->load->view('index.php',$arr);
+        }else{
+            echo '搜索不到与此相关的文章';
+        }
     }
    
 }

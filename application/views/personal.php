@@ -17,37 +17,37 @@
         <div class="header">
             <span>个人信息</span>
         </div>
-        <form action="">
+        <form action="user/update_info" method="post">
             <div class="nav">
                 <ul class="information">
                     <li id="name">
                         <span class="left">姓&nbsp;&nbsp;名:</span>
-                        <span class="right"><input type="text" value="<?php echo $result->user_name;?>"></span>
+                        <span class="right"><input type="text" name="name" value="<?php echo $result->user_name;?>"></span>
                     </li>
                     <li id="name">
                         <span class="left">账&nbsp;&nbsp;号:</span>
-                        <span class="right"><input type="text" value="<?php echo $result->email;?>"></span>
+                        <span class="right"><input type="text" readonly="readonly" value="<?php echo $result->email;?>"></span>
                     </li>
                     <li id="name">
                         <span class="left">密&nbsp;&nbsp;码:</span>
-                        <span class="right"><input type="text" value="<?php echo $result->pass;?>"></span>
+                        <span class="right"><input type="text" name="pass" value="<?php echo $result->pass;?>"></span>
                     </li>
                     <li id="name">
                         <span class="left">性&nbsp;&nbsp;别:</span>
-                        <span class="right"><input type="text" value="<?php echo $result->sex;?>">
+                        <span class="right"><input type="text" name="sex" value="<?php echo $result->sex;?>">
                             </span>
                     </li>
                     <li id="name">
                         <span class="left">省&nbsp;&nbsp;份:</span>
-                        <span class="right"><input type="text" value="<?php echo $result->province;?>"></span>
+                        <span class="right"><input type="text" name="pro" value="<?php echo $result->province;?>"></span>
                     </li>
                     <li id="name">
                         <span class="left">城&nbsp;&nbsp;市:</span>
-                        <span class="right"><input type="text" value="<?php echo $result->city;?>"></span>
+                        <span class="right"><input type="text" name="city" value="<?php echo $result->city;?>"></span>
                     </li>
                     <li id="name">
                         <span class="left">个人介绍:</span>
-                        <span class="right"><textarea name="intro" id="" cols="30" rows="4"><?php echo $result->user_introduction;?></textarea></span>
+                        <span class="right"><textarea name="js" id="" cols="30" rows="4"><?php echo $result->user_introduction;?></textarea></span>
                     </li>
                 </ul>
                 <div id="btn">

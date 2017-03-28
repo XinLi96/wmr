@@ -50,5 +50,10 @@ class T_blog_model extends CI_Model {
         $result=$this->db->insert("blog",$array);
         return $result;
     }
+    public function search($key){
+        $sql = 'select * from blog b,`user`,cate where b.cate_id=cate.cate_id and b.user_id=`user`.user_id and (blog_title LIKE '."'%$key%'".' or introduce LIKE '."'%$key%'".')';
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
 
 }

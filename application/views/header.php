@@ -43,9 +43,9 @@
             <li><a href="">联系我们</a></li>
             <li><a href="user/personal">个人中心</a></li>
         </ul>
-        <form class="am-topbar-form am-topbar-right am-form-inline" role="search">
+        <form class="am-topbar-form am-topbar-right am-form-inline" role="search" method="post" action="blog/search">
             <div class="am-form-group">
-                <input type="text" class="am-form-field am-input-sm" placeholder="搜索">
+                <input type="text" name="key" class="am-form-field am-input-sm" placeholder="搜索">
             </div>
         </form>
     </div>

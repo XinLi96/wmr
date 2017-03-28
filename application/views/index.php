@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/index.css">
 
-    <title>首页</title>
+    <title>王梦茹</title>
 </head>
 <body>
 <header class="am-g am-g-fixed blog-fixed blog-text-center blog-header">
@@ -79,7 +79,14 @@
         </article>
 <?php }?>
         <div class="partpage">
-            <?php echo $this->pagination->create_links();?>
+            <?php
+            if($flag){
+
+            }else{
+                echo $this->pagination->create_links();
+            }
+
+            ?>
 
         </div>
 
