@@ -21,6 +21,10 @@
             <div class="nav">
                 <ul class="information">
                     <li id="name">
+                        <span class="left">头&nbsp;&nbsp;像:</span>
+                        <span class="right"><img src="<?php echo $result->user_img;?>" style="width: 50px;height: 50px" alt=""></span>
+                    </li>
+                    <li id="name">
                         <span class="left">姓&nbsp;&nbsp;名:</span>
                         <span class="right"><input type="text" name="name" value="<?php echo $result->user_name;?>"></span>
                     </li>

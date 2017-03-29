@@ -28,7 +28,7 @@
 
     <div class="am-collapse am-topbar-collapse" id="blog-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav">
-            <li class="am-active"><a href="">首页</a></li>
+            <li class="am-active"><a href="blog/get_all">首页</a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="">
                     发布<span class="am-icon-caret-down"></span>
@@ -38,9 +38,9 @@
                     <li><a href="Cate/add_cate">添加分类</a></li>
                 </ul>
             </li>
-            <li><a href="Welcome/ly">留言板</a></li>
+            <li><a href="comment/get_comment">查看评论</a></li>
             <li><a href="blog/time">时间线</a></li>
-            <li><a href="">联系我们</a></li>
+            <li><a href="message/message">联系我们</a></li>
             <li><a href="user/personal">个人中心</a></li>
         </ul>
         <form class="am-topbar-form am-topbar-right am-form-inline" role="search" method="post" action="blog/search">

@@ -19,4 +19,13 @@ class T_comment_model extends CI_Model {
         $query = $this->db->get();
         return  $query->result();
     }
+    public function get_comments(){
+        $this->db->select("comment.*,blog.blog_title");
+        $this->db->from('comment');
+        $this->db->join('blog','blog.blog_id=comment.blog_id');
+        $this->db->order_by('comment_post_date', 'DESC');
+        $query = $this->db->get();
+        return  $query->result();
+
+    }
 }
