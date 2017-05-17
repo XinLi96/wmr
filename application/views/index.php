@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/index.css">
-
     <title>王梦茹</title>
 </head>
 <body>
@@ -19,7 +18,7 @@
     <div class="log-re">
         <div class=" log-div">
             <span class="am-icon-user"></span>
-            <button type="button" class="am-btn am-btn-default am-radius log-button log-btn "><a id="log-a" href="user/login">登 录</a></button><button type="button" class="am-btn am-btn-default am-radius log-button reg-btn"><a id="reg-a" href="user/reg">注册</a></button>
+            <button type="button" class="am-btn am-btn-default am-radius log-button log-btn "><a id="log-a" href="user/login">登 录</a></button><button type="button" class="am-btn am-btn-default am-radius log-button reg-btn"></button>
 
         </div>
         <div class=" out-div">
@@ -70,7 +69,7 @@
                 <span><a href="" class="blog-color"><?php echo $v->cate_name?>&nbsp;</a></span>
                 <span> <?php echo $v->user_name?> &nbsp;</span>
                 <span><?php echo $v->postdate?></span>
-                <h1><a href=""><?php echo $v->blog_title?></a></h1>
+                <h1><a href="blog/get_blog?blogId=<?php echo $v->blog_id?>"><?php echo $v->blog_title?></a></h1>
                 <p><?php echo $v->blog_content?>
                 </p>
                 <p><a href="" class="blog-continue">continue reading</a></p>
@@ -78,7 +77,8 @@
             </a>
         </article>
 <?php }?>
-        <div class="partpage">
+        <div class="partpage" style="width: auto">
+            <ul style="overflow: hidden;width: 600px">
             <?php
             if($flag){
 
@@ -87,7 +87,7 @@
             }
 
             ?>
-
+            </ul>
         </div>
 
 <!--        <ul class="am-pagination">-->

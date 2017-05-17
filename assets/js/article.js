@@ -1,11 +1,11 @@
 $(function () {
-    $('.pub-conmm-btn').on('click',function () {
-        $commentContent=$('.comment-content').val();
+    $('.pub-conmm-btn').on('click',function () {//点击发表评论的事件
+        $commentContent=$('.comment-content').val();//获取评论内容
         $time=getNowFormatDate();
         $commentEmail=$('.comment-email').val();
         $commentName=$('.comment-name').val();
         $hideBlogId=$('.hideBlogId').val();
-        $.get('comment/do_comment',{
+        $.get('comment/do_comment',{//进入控制器的方法下
             'name':$commentName,
             'email':$commentEmail,
             'content':$commentContent,
@@ -51,5 +51,17 @@ $(function () {
             return currentdate;
         }
 
+    })
+    $('#comm-email').on('blur',function () {
+        var v =$('.comment-email').val();
+        var reg = /@126.com|@qq.com/;
+        var result = reg.test(v);
+        var txO = $('#tx');
+        console.log(result);
+        if(result){
+            txO.css('display','none');
+        }else{
+            txO.css('display','block');
+        }
     })
 });

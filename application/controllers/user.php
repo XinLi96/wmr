@@ -6,10 +6,10 @@ class User extends CI_Controller {
         parent::__construct();
         $this->load->model('t_user_model');
     }
-    public function reg(){
+    public function reg(){//加载注册页面
         $this->load->view('reg');
     }
-    public function do_reg(){
+    public function do_reg(){//注册账号
         $email = $this -> input -> post('email');
         $pass = $this -> input -> post('pass');
        $rs=$this->t_user_model->compare_email($email);
@@ -27,36 +27,41 @@ class User extends CI_Controller {
    }
 
     }
-    public function login(){
+    public function login(){//加载登录页面
         $this->load->view('login');
     }
-    public function do_login(){
-        $email = $this -> input -> post('email');
-        $pass = $this -> input -> post('pass');
-        $rs=$this->t_user_model->compare_email($email);
+    public function do_login(){//博主登录
+        $email = $this -> input -> post('email');//获取登录账号
+        $pass = $this -> input -> post('pass');//获取登录密码
+        $rs=$this->t_user_model->compare_email($email);//去数据库判断账号密码是否正确
         $user_id=$rs->user_id;
-        if($rs){
+        if($rs){//登陆成功
             $rs=$this->t_user_model->compare_pass($user_id,$pass);
             $array=array(
                 'user_id'=>$user_id
             );
             $this->session->set_userdata($array);
             redirect('blog/get_all');
-        }else{
+        }else{//登录失败
             echo "<script>alert('该邮箱未注册')</script>";
         }
     }
-    public function out(){
+    public function out(){//用户退出清空缓存
         unset($_SESSION['user_id']);
         redirect('blog/get_all');
     }
-    public function personal(){
+    public function personal(){//个人信息页面
         $user_id = $this->session->userdata('user_id');
-        $result = $this->t_user_model->get_by_id($user_id);
-        $arr['result'] = $result;
-        $this->load->view('personal.php',$arr);
+        if($user_id){
+            $result = $this->t_user_model->get_by_id($user_id);
+            $arr['result'] = $result;
+            $this->load->view('personal.php',$arr);
+        }else{
+            $this->load->view('login.php');
+        }
+
     }
-    public function update_info(){
+    public function update_info(){//修改个人信息
         $user_id = $this->session->userdata('user_id');
         $name = $this->input->post('name');
         $pass = $this->input->post('pass');
@@ -70,6 +75,18 @@ class User extends CI_Controller {
             redirect(blog/get_all);
         }else{
             echo '更新失败';
+        }
+    }
+    public function admin_log(){//加载管理员登录界面
+        $this->load->view('admin/login.php');
+    }
+    public function admin_do_log(){//管理员登录
+        $num = $this->input->post('num');
+        $pass = $this->input->post('pass');
+
+        $result = $this->t_user_model->admin_do_log($num,$pass);
+        if($result){
+            $this->load->view('admin/main.php');
         }
     }
 

@@ -44,7 +44,7 @@
 <header>
 
     <div class="log-re">
-        <button type="button" class="am-btn am-btn-default am-radius log-button "><a id="reg-a" href="user/reg">注册</a></button>
+<!--        <button type="button" class="am-btn am-btn-default am-radius log-button "><a id="reg-a" href="user/reg">注册</a></button>-->
     </div>
 </header>
 

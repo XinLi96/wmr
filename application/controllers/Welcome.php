@@ -31,5 +31,8 @@ class Welcome extends CI_Controller {
     public function personal(){
         $this->load->view('personal.php');
     }
+    public function video(){
+        $this->load->view('video.php');
+    }
 
 }

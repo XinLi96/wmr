@@ -35,8 +35,17 @@
                 <p class="class="am-article-lead"">
 
                 <blockquote><p><?php if(isset($rs)){echo $rs->introduce;}?></p></blockquote>
-
-                <p><?php if(isset($rs)){echo $rs->blog_content;}?></p>
+                <form action="blog/change_blog?blog_id=<?php echo $rs->blog_id;?>" method="post">
+                    <?php
+                    $user_id = $this->session->userdata('user_id');
+                    if($user_id){
+                        echo '<textarea name="blog_con" id="" cols="70" rows="10">'.$rs->blog_content.'</textarea><br>';
+                    }else{
+                        echo '<p>'.$rs->blog_content.'</p>';
+                    }
+                    ?>
+                    <input type="submit" value="修改文章">
+                </form>
                 </p>
             </div>
         </article>
@@ -81,7 +90,7 @@
                       <input type="text" class="comment-name"  name="comment-name" value="" placeholder="名字">
                   </div>
                   <div class="am-form-group am-u-sm-4">
-                      <input type="email" class="comment-email" name="comment-email" class="" placeholder="邮箱">
+                      <input type="email" id="comm-email" class="comment-email" name="comment-email" class="" placeholder="邮箱（126或qq）"><div id="tx" style="color: red;display: none;">输入不合法！</div>
                   </div>
                   <div class="am-form-group">
                       <textarea class="comment-content"  name="comment-content" rows="5" placeholder="一字千金"></textarea>
@@ -106,16 +115,7 @@
                 <?php if(isset($rs)){echo $rs->user_introduction;}?>
             </p>
         </div>
-<!--        <div class="blog-sidebar-widget blog-bor">-->
-<!--            <h2 class="blog-text-center blog-title"><span>Contact ME</span></h2>-->
-<!--            <p>-->
-<!--                <a href=""><span class="am-icon-qq am-icon-fw am-primary blog-icon"></span></a>-->
-<!--                <a href=""><span class="am-icon-github am-icon-fw blog-icon"></span></a>-->
-<!--                <a href=""><span class="am-icon-weibo am-icon-fw blog-icon"></span></a>-->
-<!--                <a href=""><span class="am-icon-reddit am-icon-fw blog-icon"></span></a>-->
-<!--                <a href=""><span class="am-icon-weixin am-icon-fw blog-icon"></span></a>-->
-<!--            </p>-->
-<!--        </div>-->
+
 
         <div class="blog-sidebar-widget blog-bor">
             <h2 class="blog-title"><span>我的文章</span></h2>

@@ -23,7 +23,7 @@
                 <?php foreach($result as $row){?>
                 <li>
                     <span class="am-u-sm-4 am-u-md-2 timeline-span"><?php echo $row->postdate;?></span>
-                    <span class="am-u-sm-8 am-u-md-6"><a href=""><?php echo $row->blog_title;?></a></span>
+                    <span class="am-u-sm-8 am-u-md-6"><a href="blog/get_blog?blogId=<?php echo $row->blog_id?>"><?php echo $row->blog_title;?></a></span>
                     <span class="am-u-sm-4 am-u-md-2 am-hide-sm-only"><?php echo $row->cate_name;?></span>
                     <span class="am-u-sm-4 am-u-md-2 am-hide-sm-only"><?php echo $row->user_name;?></span>
                 </li>

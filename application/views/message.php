@@ -72,10 +72,10 @@
     <div class="am-u-md-4 am-u-sm-12 blog-sidebar">
         <div class="blog-sidebar-widget blog-bor">
             <h2 class="blog-text-center blog-title"><span>About ME</span></h2>
-            <img src="<?php if(isset($rs)){echo $rs->user_img;}?>" alt="about me" class="blog-entry-img" >
-            <p><?php if(isset($rs)){echo $rs->sex;}?></p>
+            <img src="<?php if(isset($rs_user)){echo $rs_user->user_img;}?>" alt="about me" class="blog-entry-img" >
+            <p><?php if(isset($rs_user)){echo $rs_user->sex;}?></p>
             <p>
-                <?php if(isset($rs)){echo $rs->user_introduction;}?>
+                <?php if(isset($rs_user)){echo $rs_user->user_introduction;}?>
             </p>
         </div>
 
